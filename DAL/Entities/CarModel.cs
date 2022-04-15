@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL.Entities
 {
-    class CarModel
+    public record CarModel
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CarModelId { get; set; }
         public string ModelName { get; set; }
         public decimal Engine { get; set; }
