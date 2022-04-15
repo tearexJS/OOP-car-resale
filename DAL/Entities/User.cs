@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DAL
+namespace DAL.Entities
 {
-    public class User
+    public record User
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
