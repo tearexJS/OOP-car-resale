@@ -28,3 +28,6 @@ C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\GeneratedInternalTypeHe
 C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\MWM\View\HomeView.baml
 C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\MWM\View\MyAdvertView.g.cs
 C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\MWM\View\MyAdvertView.baml
+C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\MWM\View\BrowseView.g.cs
+C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\MWM\View\BrowseView.baml
+C:\Documents\OOP-car-resale\GUI\bin\Debug\net5.0-windows\Media\deeznuts.mp4

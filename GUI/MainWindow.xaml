@@ -7,19 +7,24 @@
         xmlns:viewModel="clr-namespace:GUI.MWM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True">
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResizeWithGrip"
+        MinHeight="500"
+        MinWidth="650"
+        Background="#272533">
+    <!--Background="Transparent"
+        AllowsTransparency="True"-->
 
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
     
-    <Border Background="#272537"
-            CornerRadius="20">
+    <Border Background="#272533"
+            CornerRadius="20"
+            MouseDown="Window_MouseDown">
 
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -31,14 +36,32 @@
                 <RowDefinition/>          
             </Grid.RowDefinitions>
 
+            <StackPanel Orientation="Horizontal">
+                <Image Width="80"
+                       Height="80"
+                       Source="Images/FeraFace.png" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"
+                       RenderOptions.BitmapScalingMode="Fant"
+                       
+                       >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="47.282"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
 
-            <TextBlock Text="Karel"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Foreground="White"
-                       FontSize="22"
-                       Margin="20,0,0,0"
-                       />
+                </Image>
+
+                <TextBlock Text="Karel"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Foreground="White"
+                           FontSize="22"
+                           Margin="20,0,0,0"
+                           />
+            </StackPanel>
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
                              Height="50"
@@ -53,6 +76,7 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding BrowseViewCommand}"
                              />
                 <RadioButton Content="My adverisements"
                              Height="50"
@@ -61,17 +85,12 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding MyAdvertViewCommand}"
                              />
-                <Menu Height="20">
-                    <MenuItem Header="_File">
-                        <MenuItem Header="_New"/>
-                        <MenuItem Header="_Open"/>
-                        <MenuItem Header="_Save"/>
-                        <MenuItem Header="_Exit"/>
-                    </MenuItem>
-                </Menu>
+                
+
+
 
             </StackPanel>
-
+<!--
             <TextBox Width="250"
                        Height="40"
                        VerticalAlignment="Center"
@@ -79,9 +98,10 @@
                        Margin="5"
                        Grid.Column="1"
                        Style="{StaticResource ModernTextBox}"/>
-
-            <ContentControl Grid.Row="1"
+-->
+            <ContentControl Grid.Row="0"
                             Grid.Column="1"
+                            Grid.RowSpan="2"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
 

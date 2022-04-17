@@ -14,7 +14,10 @@ namespace GUI.MWM.ViewModel
         public RelayComand HomeViewCommand { get; set; }
         public RelayComand MyAdvertViewCommand { get; set; }
 
+        public RelayComand BrowseViewCommand { get; set; }
+
         public HomeViewModel HomeVM { get; set; }
+        public BrowseViewModel BrowseVM { get; set; }
 
         public MyAdvertViewModel MyAdvertVM { get; set; }
 
@@ -34,7 +37,10 @@ namespace GUI.MWM.ViewModel
         {
             HomeVM = new HomeViewModel();
             MyAdvertVM = new MyAdvertViewModel();
+            BrowseVM = new BrowseViewModel();
+            
             CurrentView = HomeVM;
+
             HomeViewCommand = new RelayComand(o =>
             {
                 CurrentView = HomeVM;
@@ -43,6 +49,11 @@ namespace GUI.MWM.ViewModel
             MyAdvertViewCommand = new RelayComand(o =>
             {
                 CurrentView = MyAdvertVM;
+            });
+
+            BrowseViewCommand = new RelayComand(o =>
+            {
+                CurrentView = BrowseVM;
             });
         }
     

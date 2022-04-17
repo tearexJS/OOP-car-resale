@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Documents\OOP-car-resale\GUI\App.xaml
-5-1621655505
+6-1650933823
 
-10-1312758346
+121691692173
 193-1891726104
-MainWindow.xaml;MWM\View\HomeView.xaml;MWM\View\MyAdvertView.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;
+MainWindow.xaml;MWM\View\BrowseView.xaml;MWM\View\HomeView.xaml;MWM\View\MyAdvertView.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;
 
 False
 

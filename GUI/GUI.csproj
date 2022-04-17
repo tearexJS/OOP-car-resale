@@ -7,8 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\FeraFace.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Fonts\" />
+    <Folder Include="Media\" />
     <Folder Include="MWM\Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\FeraFace.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Media\deeznuts.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

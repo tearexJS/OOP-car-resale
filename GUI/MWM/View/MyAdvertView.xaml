@@ -6,8 +6,64 @@
              xmlns:local="clr-namespace:GUI.MWM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="#1b1b1b">
-    <Grid>
-            
-    </Grid>
+             >
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <StackPanel>
+
+            <TextBlock Text="My advert"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal">
+                <Border Width="400"
+                    Height="200">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                            <GradientStop Color="#03aaff" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                    </Border.Clip>
+
+                    <Grid>
+                        <Image Width="250"
+                           Height="250"
+                           Source="/Images/FeraFace.png" Margin="227,-5,-77,-45" RenderTransformOrigin="0.5,0.5"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           >
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-35.535"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <StackPanel>
+                            <TextBlock Text="LMAO&#x0a;"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   Margin="20,20,10,0"/>
+
+                            <TextBlock Text="- Franta Bajza"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,50,10,0"/>
+                        </StackPanel>
+                        
+
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+
+    </ScrollViewer>
 </UserControl>

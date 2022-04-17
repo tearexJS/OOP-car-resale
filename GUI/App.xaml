@@ -17,10 +17,19 @@
 
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:BrowseViewModel}">
+                <view:BrowseView/>
+
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewModel:MyAdvertViewModel}">
                 <view:MyAdvertView/>
 
             </DataTemplate>
+
+            
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

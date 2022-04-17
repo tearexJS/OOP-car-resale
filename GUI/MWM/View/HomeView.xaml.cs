@@ -23,6 +23,13 @@ namespace GUI.MWM.View
         public HomeView()
         {
             InitializeComponent();
+           
+        }
+
+        private void VideoControl_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            VideoControl.Position = new TimeSpan(0, 0, 0);
+            VideoControl.Play();
         }
     }
 }
