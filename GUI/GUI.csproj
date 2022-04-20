@@ -12,8 +12,14 @@
 
   <ItemGroup>
     <Folder Include="Fonts\" />
+    <Folder Include="Images\Cars\" />
     <Folder Include="Media\" />
-    <Folder Include="MWM\Model\" />
+    <Folder Include="MWM\View1\" />
+    <Folder Include="MWM\ViewModel1\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro.Core" Version="4.0.173" />
   </ItemGroup>
 
   <ItemGroup>

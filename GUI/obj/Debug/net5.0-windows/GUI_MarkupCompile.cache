@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Documents\OOP-car-resale\GUI\obj\Debug\net5.0-windows\
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\GUI\obj\Debug\net5.0-windows\
 GUI
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Documents\OOP-car-resale\GUI\App.xaml
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\GUI\App.xaml
 6-1650933823
 
-121691692173
-193-1891726104
+15-227638586
+194-819341214
 MainWindow.xaml;MWM\View\BrowseView.xaml;MWM\View\HomeView.xaml;MWM\View\MyAdvertView.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;
 
 False

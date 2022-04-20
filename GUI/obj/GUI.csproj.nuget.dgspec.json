@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Documents\\OOP-car-resale\\GUI\\GUI.csproj": {}
+    "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\GUI\\GUI.csproj": {}
   },
   "projects": {
-    "C:\\Documents\\OOP-car-resale\\GUI\\GUI.csproj": {
+    "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\GUI\\GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Documents\\OOP-car-resale\\GUI\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Documents\\OOP-car-resale\\GUI\\GUI.csproj",
+        "projectPath": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\GUI\\GUI.csproj",
         "packagesPath": "C:\\Users\\pivop\\.nuget\\packages\\",
-        "outputPath": "C:\\Documents\\OOP-car-resale\\GUI\\obj\\",
+        "outputPath": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\GUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Caliburn.Micro.Core": {
+              "target": "Package",
+              "version": "[4.0.173, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }
