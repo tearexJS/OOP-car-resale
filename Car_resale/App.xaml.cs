@@ -5,8 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using CarResale.DAL;
 
-namespace Car_resale
+namespace CarResale
 {
     /// <summary>
     /// Interaction logic for App.xaml
