@@ -3,34 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Entities;
-using DAL.Seeds;
+using CarResale.DAL.Entities;
+using CarResale.DAL.Seeds;
 using Microsoft.EntityFrameworkCore;
 
-namespace DAL
+namespace CarResale.DAL
 {
-    class CarResaleDbContext : DbContext
+    public class CarResaleDbContext : DbContext
     {
         private readonly bool _seedDemoData;
 
-        public CarResaleDbContext(DbContextOptions contextOptions, bool seedDemoData = false)
+        public CarResaleDbContext(DbContextOptions contextOptions, bool seedDemoData = false) : base(contextOptions)
         {
             _seedDemoData = seedDemoData;
         }
 
-        public DbSet<Advertisement> Advertisements => Set<Advertisement>();
-        public DbSet<Car> Cars => Set<Car>();
-        public DbSet<CarManufacturer> CarManufacturers => Set<CarManufacturer>();
-        public DbSet<CarModel> CarModels => Set<CarModel>();
-        public DbSet<CarType> CarTypes => Set<CarType>();
-        public DbSet<Credentials> Credentials => Set<Credentials>();
-        public DbSet<Image> Images => Set<Image>();
-        public DbSet<User> Users => Set<User>();
+        public DbSet<AdvertisementEntity> Advertisements => Set<AdvertisementEntity>();
+        public DbSet<CarEntity> Cars => Set<CarEntity>();
+        public DbSet<CarManufacturerEntity> CarManufacturers => Set<CarManufacturerEntity>();
+        public DbSet<CarModelEntity> CarModels => Set<CarModelEntity>();
+        public DbSet<CarTypeEntity> CarTypes => Set<CarTypeEntity>();
+        public DbSet<ImageEntity> Images => Set<ImageEntity>();
+        public DbSet<UserEntity> Users => Set<UserEntity>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             base.OnModelCreating(modelBuilder);
+            //creates entity Image
+            modelBuilder.Entity<ImageEntity>();
+            modelBuilder.Entity<UserEntity>();
+            modelBuilder.Entity<CarEntity>();
+            modelBuilder.Entity<CarManufacturerEntity>();
+            modelBuilder.Entity<CarModelEntity>();
+            modelBuilder.Entity<CarTypeEntity>();
+
             if(_seedDemoData)
             {
                 UserSeeds.Seed(modelBuilder);
