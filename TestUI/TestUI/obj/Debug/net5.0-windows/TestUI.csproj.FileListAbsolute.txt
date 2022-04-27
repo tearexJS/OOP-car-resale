@@ -91,3 +91,6 @@ C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-wi
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\bin\Debug\net5.0-windows\Resources\Images\ProfilePictures\FeraFace.png
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\MyAccountView.g.cs
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\MyAccountView.baml
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\AdvertView.g.cs
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\AdvertView.baml
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\bin\Debug\net5.0-windows\Resources\Text\PovidkaOChlebu.txt

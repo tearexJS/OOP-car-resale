@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\App.xaml
-7-441587008
+8-344905538
 10-281545196
-15664528425
+19298141287
 217623725108
-Theme\DataGridTheme.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;Views\BrowseView.xaml;Views\HomeView.xaml;Views\MyAccountView.xaml;Views\ShellView.xaml;
+Theme\DataGridTheme.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;Views\AdvertView.xaml;Views\BrowseView.xaml;Views\HomeView.xaml;Views\MyAccountView.xaml;Views\ShellView.xaml;
 
 False
 

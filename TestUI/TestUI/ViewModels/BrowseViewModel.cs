@@ -5,16 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestUI.Models;
+using TestUI;
 
 namespace TestUI.ViewModels
 {
-    public class BrowseViewModel : Screen
+    public class BrowseViewModel : Conductor<object>
     {
         public BindableCollection<AdvertsModel> Adverts { set; get; }
+
+        
+
+
+
         public BrowseViewModel()
         {
             DataAccess da = new DataAccess();
             Adverts = new BindableCollection<AdvertsModel>(da.GetAdverts());
+
         }
+
+        
+        
+
+
     }
 }

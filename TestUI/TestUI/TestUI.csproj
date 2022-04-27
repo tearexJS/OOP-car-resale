@@ -59,4 +59,14 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Text\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Text\PovidkaOChlebu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

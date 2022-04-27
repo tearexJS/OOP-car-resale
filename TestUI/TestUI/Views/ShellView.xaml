@@ -13,10 +13,12 @@
         Background="#272533" 
         WindowStartupLocation="CenterScreen">
     
+    
     <Border Background="#272533"
             CornerRadius="20"
             >
 
+        
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -28,6 +30,9 @@
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            
+            
+            
             <Button x:Name="LoadPageMyAccount">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
