@@ -10,7 +10,7 @@ using Xunit.Abstractions;
 
 namespace CarResale.DAL.Tests
 {
-    public class DbContextTestsBase
+    public class DbContextTestsBase : IAsyncLifetime
     {
         protected DbContextTestsBase(ITestOutputHelper output)
         {
@@ -19,7 +19,7 @@ namespace CarResale.DAL.Tests
 
             // DbContextFactory = new DbContextTestingInMemoryFactory(GetType().Name, seedTestingData: true);
             // DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
-            DbContextFactory = new LocalDbContextFactory("Resale.mdf", seedDemoData: true);
+            DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
 
             CarResaleDbContextSUT = DbContextFactory.CreateDbContext();
         }
@@ -28,16 +28,16 @@ namespace CarResale.DAL.Tests
         protected CarResaleDbContext CarResaleDbContextSUT { get; }
 
 
-        public void Initialize()
+        public async Task InitializeAsync()
         {
-            CarResaleDbContextSUT.Database.EnsureDeleted();
-            CarResaleDbContextSUT.Database.EnsureCreated();
+            await CarResaleDbContextSUT.Database.EnsureDeletedAsync();
+            await CarResaleDbContextSUT.Database.EnsureCreatedAsync();
         }
 
-        public void Dispose()
+        public async Task DisposeAsync()
         {
-            CarResaleDbContextSUT.Database.EnsureDeleted();
-            CarResaleDbContextSUT.Dispose();
+            await CarResaleDbContextSUT.Database.EnsureDeletedAsync();
+            await CarResaleDbContextSUT.DisposeAsync();
         }
     }
 }

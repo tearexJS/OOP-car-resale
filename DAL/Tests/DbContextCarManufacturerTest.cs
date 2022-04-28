@@ -32,11 +32,10 @@ namespace CarResale.DAL.Tests
             //Act
             CarResaleDbContextSUT.Users.Add(entity);
             CarResaleDbContextSUT.SaveChanges();
-            Console.WriteLine("RUUUUUUN");
             //Assert
             using var dbx =  DbContextFactory.CreateDbContext();
             var actualEntities = dbx.Users.Single(i => i.Id == entity.Id);
-            Assert.Equal(entity, actualEntities);
+            DeepAssert.Equal(entity, actualEntities);
         }
     }
 }

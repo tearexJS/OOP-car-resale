@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarResale.BL.Models
 {
-    public interface IModel
+    public abstract record ModelBase : IModel
     {
-        Guid Id { get; }
+        public Guid Id { get; set; }
     }
 }

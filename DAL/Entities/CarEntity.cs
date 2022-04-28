@@ -13,7 +13,7 @@ namespace CarResale.DAL.Entities
             int YearOfManufacture,
             Guid CarModelId
         ) : IEntity
-    { 
-                
+    {
+        public CarModelEntity CarModel { get; init; }
     }
 }

@@ -11,7 +11,11 @@ namespace CarResale.DAL.Entities
             Guid Id,
             string ManufacturerName
         ) : IEntity
-    { 
+    {
+        //Automapper requires parameter less constructor for collection synchronization for now
+#nullable disable
+        public CarManufacturerEntity() : this(default, default) { }
+#nullable enable
         public ICollection<CarModelEntity> Models { get; init; }
     }
 }

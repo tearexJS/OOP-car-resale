@@ -21,10 +21,11 @@ namespace CarResale.DAL.Tests
         public CarResaleDbContext CreateDbContext()
         {
             DbContextOptionsBuilder<CarResaleDbContext> builder = new();
-            builder.UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Projects\\OOP-car-resale\\DAL\\Resale.mdf;Integrated Security=True;");
+            //builder.UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog = {_databaseName};MultipleActiveResultSets = True;Integrated Security = True; ");
+            builder.UseSqlite($"Data Source={_databaseName};Cache=Shared");
 
-             //contextOptionsBuilder.LogTo(System.Console.WriteLine); //Enable in case you want to see tests details, enabled may cause some inconsistencies in tests
-             //builder.EnableSensitiveDataLogging();
+            //contextOptionsBuilder.LogTo(System.Console.WriteLine); //Enable in case you want to see tests details, enabled may cause some inconsistencies in tests
+            builder.EnableSensitiveDataLogging();
 
             return new CarResaleTestingDbContext(builder.Options, _seedTestingData);
         }

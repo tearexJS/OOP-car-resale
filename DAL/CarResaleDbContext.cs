@@ -31,12 +31,12 @@ namespace CarResale.DAL
 
             base.OnModelCreating(modelBuilder);
             //creates entity Image
-            modelBuilder.Entity<ImageEntity>();
+            /*modelBuilder.Entity<ImageEntity>();
             modelBuilder.Entity<UserEntity>();
             modelBuilder.Entity<CarEntity>();
             modelBuilder.Entity<CarManufacturerEntity>();
             modelBuilder.Entity<CarModelEntity>();
-            modelBuilder.Entity<CarTypeEntity>();
+            modelBuilder.Entity<CarTypeEntity>();*/
 
             if(_seedDemoData)
             {
