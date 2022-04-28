@@ -94,3 +94,7 @@ C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-wi
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\AdvertView.g.cs
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\AdvertView.baml
 C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\bin\Debug\net5.0-windows\Resources\Text\PovidkaOChlebu.txt
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\NewAdvertView.g.cs
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\obj\Debug\net5.0-windows\Views\NewAdvertView.baml
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\bin\Debug\net5.0-windows\Resources\Images\Cars\defaultCar.png
+C:\Users\pivop\Documents\GitHub\OOP-car-resale\TestUI\TestUI\bin\Debug\net5.0-windows\Resources\Images\dio-face-transparent-Transparent-Images.png

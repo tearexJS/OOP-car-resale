@@ -15,6 +15,7 @@ namespace TestUI.ViewModels
         BrowseViewModel BrowseViewModel = new BrowseViewModel();
         MyAccountViewModel MyAccountViewModel = new MyAccountViewModel();
         AdvertViewModel AdvertViewModel;
+        NewAdvertViewModel NewAdvertViewModel = new NewAdvertViewModel();
         
 
         public ShellViewModel()
@@ -34,7 +35,7 @@ namespace TestUI.ViewModels
 
         public void LoadPage3()
         {
-            ActivateItemAsync(HomeViewModel);
+            ActivateItemAsync(NewAdvertViewModel);
         }
 
         public void LoadPageMyAccount()

@@ -14,9 +14,11 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/cars/auto4.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/cars/auto5.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/cars/auto6.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/cars/defaultcar.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/feraface.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/profilepictures/feraface.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/media/bloodshed.mp4")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/media/deeznuts.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dio-face-transparent-transparent-images.png")]
 
 

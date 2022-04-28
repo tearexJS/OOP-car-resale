@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestUI.Views"
-       mc:Ignorable="d"
+        mc:Ignorable="d"
+        xmlns:cal="http://www.caliburnproject.org"
         Title="MainWindow" Height="600" Width="920"
         WindowStyle="SingleBorderWindow"
         
@@ -94,7 +95,7 @@
                              Style="{StaticResource MenuButtonTheme}"
                              />
                 <RadioButton x:Name="LoadPage3"
-                             Content="My adverisements"
+                             Content="New advertisement"
                              Height="50"
                              Foreground="White"
                              FontSize="14"

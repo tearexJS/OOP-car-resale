@@ -13,20 +13,12 @@ namespace TestUI.ViewModels
     {
         public BindableCollection<AdvertsModel> Adverts { set; get; }
 
-        
-
-
-
         public BrowseViewModel()
         {
             DataAccess da = new DataAccess();
             Adverts = new BindableCollection<AdvertsModel>(da.GetAdverts());
 
+
         }
-
-        
-        
-
-
     }
 }
