@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarResale.BL.Models;
 
-namespace CarResale.BL.Models
+namespace BL.Models
 {
-    public interface IModel
+    public record ImageModel(
+
+    ):ModelBase
     {
-        Guid Id { get; }
     }
 }

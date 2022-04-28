@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarResale.BL.Models
+namespace BL.Models
 {
-    public interface IModel
+    class CarManufacturerListModel
     {
-        Guid Id { get; }
     }
 }
