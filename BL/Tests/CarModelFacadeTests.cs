@@ -59,7 +59,7 @@ namespace BL.Tests
             carModel = await _carModelFacadeSUT.SaveAsync(carModel);
 
             //Assert
-            var carModeFromDb = dbxAssert.CarModels.Include(i => i.CarType).Include(i => i.CarManufacturer).Single(i => i.Id == carModel.Id);
+            var carModeFromDb = dbxAssert.CarModels.Include(i => i.Type).Include(i => i.ManufacturerName).Single(i => i.Id == carModel.Id);
             DeepAssert.Equal(carModel, Mapper.Map<CarModelDetailModel>(carModeFromDb));
         }
 
@@ -98,7 +98,7 @@ namespace BL.Tests
                     ManufacturerName:"asdf",
                     Type:"asdf"
                 );
-            var carModeFromDb = dbxAssert.CarModels.Include(i => i.CarType).Single(i => i.Id == carModel.Id);
+            var carModeFromDb = dbxAssert.CarModels.Include(i => i.Type).Single(i => i.Id == carModel.Id);
             DeepAssert.Equal(carListModelExpected, Mapper.Map<CarModelListModel>(carModeFromDb));
         }
        [Fact]

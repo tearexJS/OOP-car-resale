@@ -35,7 +35,9 @@ namespace BL.Models
             {
 
                 CreateMap<CarModelEntity, CarModelListModel>()
-                    .IncludeMembers(src => src.CarType, src => src.CarManufacturer);
+                    .IncludeMembers(src => src.Type, src => src.ManufacturerName)
+                    .ForMember(dest => dest.ManufacturerName, opt => opt.MapFrom(src => src.ManufacturerName))
+                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type)).DisableCtorValidation();
 
                 CreateMap<CarModelDetailModel, CarModelListModel>()
                     .IncludeMembers(src => src.Type, src => src.ManufacturerName);
