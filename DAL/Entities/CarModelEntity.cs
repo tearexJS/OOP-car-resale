@@ -23,7 +23,7 @@ namespace CarResale.DAL.Entities
         public CarModelEntity() : this(default, default, default, default, default, default, default, default) { }
 #nullable enable
         public ICollection<CarEntity> Cars { get; init; } = new List<CarEntity>();
-        public CarTypeEntity? CarType { get; init; }
-        public CarManufacturerEntity? CarManufacturer { get; init; }
+        public CarTypeEntity? Type { get; init; }
+        public CarManufacturerEntity? ManufacturerName { get; init; }
     }
 }

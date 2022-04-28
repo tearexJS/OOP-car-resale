@@ -34,9 +34,11 @@ namespace CarResale.BL.Models
             {
 
                 CreateMap<CarModelEntity, CarModelDetailModel>(MemberList.Destination)
+                    .ForMember(dest => dest.Type, opt => opt.Ignore())
+                    .ForMember(dest => dest.ManufacturerName, opt => opt.Ignore())
                     .ReverseMap()
-                    .ForMember(entity => entity.CarType, exp => exp.Ignore())
-                    .ForMember(entity => entity.CarManufacturer, exp => exp.Ignore());
+                    .ForMember(entity => entity.Type, exp => exp.Ignore())
+                    .ForMember(entity => entity.ManufacturerName, exp => exp.Ignore());
                 //CreateMap<CarTypeDetailModel, CarModelDetailModel>(MemberList.Source).DisableCtorValidation();
                 // CreateMap<CarManufacturerDetailModel, CarModelDetailModel>(MemberList.Source).DisableCtorValidation();
 
