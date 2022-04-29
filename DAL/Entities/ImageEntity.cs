@@ -13,6 +13,6 @@ namespace CarResale.DAL.Entities
             Guid AdvertisementId
         ) : IEntity
     {
-
+        public AdvertisementEntity? Advertisement { get; init; }
     }
 }

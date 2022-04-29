@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
-using BL.Models;
 using CarResale.DAL.Entities;
 
 namespace CarResale.BL.Models
@@ -24,7 +23,7 @@ namespace CarResale.BL.Models
         public int Seats { get; set; } = Seats;
         public decimal TrunkSize { get; set; } = TrunkSize;
         public CarTypeDetailModel Type { get; set; }
-        public CarManufacturerDetailModel ManufacturerName { get; set; }
+        public CarManufacturerDetailModel Manufacturer { get; set; }
 
         public List<CarDetailModel> Cars { get; set; } = new();
 
@@ -34,11 +33,9 @@ namespace CarResale.BL.Models
             {
 
                 CreateMap<CarModelEntity, CarModelDetailModel>(MemberList.Destination)
-                    .ForMember(dest => dest.Type, opt => opt.Ignore())
-                    .ForMember(dest => dest.ManufacturerName, opt => opt.Ignore())
                     .ReverseMap()
                     .ForMember(entity => entity.Type, exp => exp.Ignore())
-                    .ForMember(entity => entity.ManufacturerName, exp => exp.Ignore());
+                    .ForMember(entity => entity.Manufacturer, exp => exp.Ignore());
                 //CreateMap<CarTypeDetailModel, CarModelDetailModel>(MemberList.Source).DisableCtorValidation();
                 // CreateMap<CarManufacturerDetailModel, CarModelDetailModel>(MemberList.Source).DisableCtorValidation();
 

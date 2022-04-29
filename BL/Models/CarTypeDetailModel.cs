@@ -5,10 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using CarResale.BL.Models;
 using CarResale.DAL.Entities;
 
-namespace BL.Models
+namespace CarResale.BL.Models
 {
     public record CarTypeDetailModel(
         string Type

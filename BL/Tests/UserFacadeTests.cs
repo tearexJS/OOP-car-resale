@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL.Models
+namespace CarResale.BL.Tests
 {
-    class CarManufacturerListModel
+    internal class UserFacadeTests
     {
     }
 }

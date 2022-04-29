@@ -24,8 +24,9 @@ namespace CarResale.BL.Tests
             Console.SetOut(converter);
 
             // DbContextFactory = new DbContextTestingInMemoryFactory(GetType().Name, seedTestingData: true);
-            // DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
             DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
+            //DbContextFactory = new DbContextLocalDBTestingFactory("OOPresale.sqlite", seedTestingData: true);
+
 
             UnitOfWorkFactory = new UnitOfWorkFactory(DbContextFactory);
 

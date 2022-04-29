@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BL.Facades;
-using BL.Models;
 using CarResale.BL.Facades;
 using CarResale.BL.Models;
 using CarResale.BL.Tests;
@@ -14,7 +12,7 @@ using CarResale.DAL.Tests;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace BL.Tests
+namespace CarResale.BL.Tests
 {
     public class CarModelFacadeTests : CRUDFacadeTestsBase
     {
@@ -51,7 +49,7 @@ namespace BL.Tests
             )
             {
                 Type = Mapper.Map<CarTypeDetailModel>(carTypeModel),
-                ManufacturerName = Mapper.Map<CarManufacturerDetailModel>(carManufacaturerModel)
+                Manufacturer = Mapper.Map<CarManufacturerDetailModel>(carManufacaturerModel)
             };
 
         //Act
@@ -59,7 +57,7 @@ namespace BL.Tests
             carModel = await _carModelFacadeSUT.SaveAsync(carModel);
 
             //Assert
-            var carModeFromDb = dbxAssert.CarModels.Include(i => i.Type).Include(i => i.ManufacturerName).Single(i => i.Id == carModel.Id);
+            var carModeFromDb = dbxAssert.CarModels.Include(i => i.Type).Include(i => i.Manufacturer).Single(i => i.Id == carModel.Id);
             DeepAssert.Equal(carModel, Mapper.Map<CarModelDetailModel>(carModeFromDb));
         }
 
@@ -86,7 +84,7 @@ namespace BL.Tests
             )
             {
                 Type = Mapper.Map<CarTypeDetailModel>(carTypeModel),
-                ManufacturerName = Mapper.Map<CarManufacturerDetailModel>(carManufacaturerModel)
+                Manufacturer = Mapper.Map<CarManufacturerDetailModel>(carManufacaturerModel)
             };
             carModel = await _carModelFacadeSUT.SaveAsync(carModel);
             var carListModelExpected = new CarModelListModel(
@@ -94,12 +92,13 @@ namespace BL.Tests
                     Engine:(decimal)1.22,
                     Power: 1234,
                     Seats: 42,
-                    TrunkSize:2343,
-                    ManufacturerName:"asdf",
+                    TrunkSize: 2343,
+                    ManufacturerName: "asdf",
                     Type:"asdf"
                 );
-            var carModeFromDb = dbxAssert.CarModels.Include(i => i.Type).Single(i => i.Id == carModel.Id);
-            DeepAssert.Equal(carListModelExpected, Mapper.Map<CarModelListModel>(carModeFromDb));
+            //var carModeFromDb = dbxAssert.CarModels.Include(i => i.Type).Include(i => i.Manufacturer).Single(i => i.Id == carModel.Id);
+            var carModeListFromDb = _carModelFacadeSUT.GetAsync(carModel.Id);
+            DeepAssert.Equals(carListModelExpected, carModeListFromDb);
         }
        [Fact]
        public async Task MapCarModelDetialModelToCarModeListMode()
@@ -114,7 +113,7 @@ namespace BL.Tests
                )
            {
                Type = new CarTypeDetailModel("asdf"),
-               ManufacturerName = new CarManufacturerDetailModel("asdf")
+               Manufacturer = new CarManufacturerDetailModel("asdf")
            };
 
            var carModelList = new CarModelListModel(
