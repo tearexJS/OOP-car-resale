@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Collection.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Caliburn.Micro" Version="4.0.173" />
   </ItemGroup>
 
   <ItemGroup>
