@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarResale", "CarResale.csproj", "{A716BA38-B73D-4438-A1BB-23F1196CC93D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "App.csproj", "{A716BA38-B73D-4438-A1BB-23F1196CC93D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "..\DAL\DAL.csproj", "{F18796D9-8071-43CD-9B30-74F90AFF74F2}"
 EndProject
