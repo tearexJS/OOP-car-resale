@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uBuAg2JHmkibBvFqcfD9j+lvYjrXbSjv7Qa797dv6xyhamY2KQ1pKLFFKNmqMvAsF5L7RiKxhjUuY9UBBG2Vhw==",
+  "dgSpecHash": "zW+/Msh9t/06kivpTZecPUbl9QbGARfscj7OEDo5aaww0FfzYTANG+CTZt/LD9dEKoy7DjuDVRteaZ5JujdZ4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\TestUI\\TestUI\\TestUI.csproj",
+  "projectFilePath": "C:\\Documents\\OOP-car-resale\\TestUI\\TestUI\\TestUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pivop\\.nuget\\packages\\caliburn.micro\\4.0.173\\caliburn.micro.4.0.173.nupkg.sha512",
     "C:\\Users\\pivop\\.nuget\\packages\\caliburn.micro.core\\4.0.173\\caliburn.micro.core.4.0.173.nupkg.sha512",

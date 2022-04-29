@@ -3819,11 +3819,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\TestUI\\TestUI\\TestUI.csproj",
+      "projectUniqueName": "C:\\Documents\\OOP-car-resale\\TestUI\\TestUI\\TestUI.csproj",
       "projectName": "TestUI",
-      "projectPath": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\TestUI\\TestUI\\TestUI.csproj",
+      "projectPath": "C:\\Documents\\OOP-car-resale\\TestUI\\TestUI\\TestUI.csproj",
       "packagesPath": "C:\\Users\\pivop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pivop\\Documents\\GitHub\\OOP-car-resale\\TestUI\\TestUI\\obj\\",
+      "outputPath": "C:\\Documents\\OOP-car-resale\\TestUI\\TestUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3879,7 +3879,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

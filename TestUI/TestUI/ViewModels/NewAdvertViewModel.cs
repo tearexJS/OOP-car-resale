@@ -19,13 +19,15 @@ namespace TestUI.ViewModels
         public NewAdvertViewModel()
         {
             projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-            advertPicture = createImage(projectDirectory+"\\Resources\\Images\\Cars\\defaultCar.png");
+            advertPicture = createImage(projectDirectory + "\\Resources\\Images\\Cars\\defaultCar.png");
         }
-        
+
         string projectDirectory;
         private Image _advertPicture;
-       
-        public Image advertPicture { get => _advertPicture;
+
+        public Image advertPicture
+        {
+            get => _advertPicture;
             set
             {
                 _advertPicture = value;
@@ -66,15 +68,15 @@ namespace TestUI.ViewModels
         {
             string[] files = e.Data.GetData(DataFormats.FileDrop, true) as string[];
             string fileSource = Path.GetFullPath(files[0]);
-            string fileDesination= projectDirectory+"\\Resources\\Images\\"+Path.GetFileName(files[0]);
-            
+            string fileDesination = projectDirectory + "\\Resources\\Images\\" + Path.GetFileName(files[0]);
+
             File.Copy(fileSource, fileDesination, true);
             advertPicture = createImage("\\Resources\\Images\\" + Path.GetFileName(files[0]));
 
             e.Handled = true;
             return;
         }
-        
+
         public void DragOverFileExtensionCheck(DragEventArgs e)
         {
 
