@@ -14,8 +14,8 @@ namespace CarResale.DAL.Entities
             decimal Power,
             int Seats,
             decimal TrunkSize,
-            Guid CarTypeId,
-            Guid CarManufacturerId
+            Guid TypeId,
+            Guid ManufacturerId
         ) : IEntity
     {
         //Automapper requires parameter less constructor for collection synchronization for now
@@ -24,6 +24,6 @@ namespace CarResale.DAL.Entities
 #nullable enable
         public ICollection<CarEntity> Cars { get; init; } = new List<CarEntity>();
         public CarTypeEntity? Type { get; init; }
-        public CarManufacturerEntity? ManufacturerName { get; init; }
+        public CarManufacturerEntity? Manufacturer { get; init; }
     }
 }

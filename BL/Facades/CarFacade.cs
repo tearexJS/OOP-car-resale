@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using CarResale.BL.Facades;
 using CarResale.BL.Models;
 using CarResale.DAL.Entities;
+using CarResale.DAL.Factories;
 using CarResale.DAL.UnitOfWork;
 
 namespace CarResale.BL.Facades
 {
-    public class CarManufacturerFacade : CRUDFacade<CarManufacturerEntity, CarManufacturerDetailModel, CarManufacturerDetailModel>
+    public class CarFacade : CRUDFacade<CarEntity, CarDetailModel, CarDetailModel>
     {
-        public CarManufacturerFacade(IUnitOfWorkFactory unitOfWorkFactory, IMapper mapper) : base(unitOfWorkFactory, mapper){}
+        public CarFacade(IUnitOfWorkFactory unitOfWorkFactory, Mapper mapper) : base(unitOfWorkFactory, mapper) { }
     }
 }

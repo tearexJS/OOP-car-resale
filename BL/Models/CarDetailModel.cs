@@ -11,18 +11,20 @@ namespace CarResale.BL.Models
     public record CarDetailModel(
         decimal Mileage,
         int YearOfManufacture
-    ) : ModelBase
+        ) : ModelBase
     {
         public decimal Mileage { get; set; } = Mileage;
         public int YearOfManufacture { get; set; } = YearOfManufacture;
+        public CarModelListModel CarModel { get; set; }
 
         public class MapperProfile : Profile
         {
             public MapperProfile()
             {
-
+                //FIX: IncludeMembers(), CarModel
                 CreateMap<CarEntity, CarDetailModel>()
-                    .ReverseMap();
+                    .ReverseMap()
+                    .ForMember(entity => entity.CarModel, opt => opt.Ignore());
             }
         }
 

@@ -9,6 +9,7 @@ namespace CarResale.DAL.Entities
 {
     public record AdvertisementEntity(
             Guid Id,
+            string Title,
             string Description,
             decimal Price,
             DateTime PublicationTime,
@@ -17,8 +18,10 @@ namespace CarResale.DAL.Entities
         ) : IEntity
     {
 #nullable disable
-        public AdvertisementEntity() : this(default, default, default, default, default, default) { }
+        public AdvertisementEntity() : this(default, default, default, default, default, default, default) { }
 #nullable enable
         public ICollection<ImageEntity>? Images { get; init; } = new List<ImageEntity>();
+        public CarEntity? Car { get; init; }
+        public UserEntity? User { get; init; }
     }
 }

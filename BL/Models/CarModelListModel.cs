@@ -9,7 +9,7 @@ using AutoMapper;
 using AutoMapper.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace BL.Models
+namespace CarResale.BL.Models
 {
     public record CarModelListModel(
         string ModelName,
@@ -35,12 +35,10 @@ namespace BL.Models
             {
 
                 CreateMap<CarModelEntity, CarModelListModel>()
-                    .IncludeMembers(src => src.Type, src => src.ManufacturerName)
-                    .ForMember(dest => dest.ManufacturerName, opt => opt.MapFrom(src => src.ManufacturerName))
-                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type)).DisableCtorValidation();
-
-                CreateMap<CarModelDetailModel, CarModelListModel>()
-                    .IncludeMembers(src => src.Type, src => src.ManufacturerName);
+                    .ConstructUsing(src => new CarModelListModel("",default,default,default,default,"",""))
+                    .IncludeMembers(src => src.Type, src => src.Manufacturer)
+                    .ForMember(dest => dest.ManufacturerName, opt => opt.MapFrom(src => src.Manufacturer.ManufacturerName))
+                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type.Type));
 
                 CreateMap<CarTypeEntity, CarModelListModel>(MemberList.None)
                     .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type));
@@ -48,8 +46,15 @@ namespace BL.Models
                 CreateMap<CarManufacturerEntity, CarModelListModel>(MemberList.None)
                     .ForMember(dest => dest.ManufacturerName, opt => opt.MapFrom(src => src.ManufacturerName));
 
+                CreateMap<CarModelDetailModel, CarModelListModel>()
+                    .ConstructUsing(src => new CarModelListModel("", default, default, default, default, "", ""))
+                    .IncludeMembers(src => src.Type, src => src.Manufacturer)
+                    .ForMember(dest => dest.ManufacturerName, opt => opt.MapFrom(src => src.Manufacturer.ManufacturerName))
+                    .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type.Type));
+
                 CreateMap<CarTypeDetailModel, CarModelListModel>(MemberList.None)
                     .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type));
+
                 CreateMap<CarManufacturerDetailModel, CarModelListModel>(MemberList.None)
                     .ForMember(dest => dest.ManufacturerName, opt => opt.MapFrom(src => src.ManufacturerName));
 

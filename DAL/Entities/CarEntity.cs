@@ -9,11 +9,11 @@ namespace CarResale.DAL.Entities
 {
     public record CarEntity(
             Guid Id,
-            decimal mileage,
+            decimal Mileage,
             int YearOfManufacture,
             Guid CarModelId
         ) : IEntity
     {
-        public CarModelEntity CarModel { get; init; }
+        public CarModelEntity? CarModel { get; init; }
     }
 }

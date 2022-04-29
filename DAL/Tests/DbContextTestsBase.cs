@@ -19,8 +19,7 @@ namespace CarResale.DAL.Tests
 
             // DbContextFactory = new DbContextTestingInMemoryFactory(GetType().Name, seedTestingData: true);
             // DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
-            DbContextFactory = new DbContextLocalDBTestingFactory("C:\\OOPresale.sqlite", seedTestingData: true);
-            //DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
+            DbContextFactory = new DbContextLocalDBTestingFactory(GetType().FullName!, seedTestingData: true);
 
 
             CarResaleDbContextSUT = DbContextFactory.CreateDbContext();

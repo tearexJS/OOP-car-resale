@@ -16,6 +16,6 @@ namespace CarResale.DAL.Entities
 #nullable disable
         public CarManufacturerEntity() : this(default, default) { }
 #nullable enable
-        public ICollection<CarModelEntity> Models { get; init; }
+        public ICollection<CarModelEntity> CarModels { get; init; }
     }
 }

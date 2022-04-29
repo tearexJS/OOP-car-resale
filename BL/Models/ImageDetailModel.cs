@@ -9,22 +9,19 @@ using CarResale.DAL.Entities;
 
 namespace CarResale.BL.Models
 {
-    public record CarManufacturerDetailModel(
-        string ManufacturerName
-    ) : ModelBase
-
+    public record ImageDetailModel(
+        string ImagePath
+    ) :ModelBase
     {
-        public string ManufacturerName { get; set; } = ManufacturerName;
+        public string ImagePath { get; set; } = ImagePath;
 
         public class MapperProfile : Profile
         {
             public MapperProfile()
             {
-
-                CreateMap<CarManufacturerEntity, CarManufacturerDetailModel>()
+                CreateMap<ImageEntity, ImageDetailModel>()
                     .ReverseMap();
             }
         }
     }
-
 }
