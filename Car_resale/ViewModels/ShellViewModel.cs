@@ -9,46 +9,26 @@ namespace App.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        //public BindableCollection<> Adverts { set; get; }
-        HomeViewModel HomeViewModel = new HomeViewModel();
         BrowseViewModel BrowseViewModel = new BrowseViewModel();
-        MyAccountViewModel MyAccountViewModel = new MyAccountViewModel();
         AdvertViewModel AdvertViewModel;
         NewAdvertViewModel NewAdvertViewModel = new NewAdvertViewModel();
-
-
         public ShellViewModel()
         {
 
-            ActivateItemAsync(HomeViewModel);
+            ActivateItemAsync(BrowseViewModel);
         }
-        public void LoadPage1()
-        {
-            ActivateItemAsync(HomeViewModel);
-        }
-
-        public void LoadPage2()
+        public void LoadBrowseView()
         {
             ActivateItemAsync(BrowseViewModel);
         }
-
-        public void LoadPage3()
+        public void LoadNewAdvertView()
         {
             ActivateItemAsync(NewAdvertViewModel);
         }
-
-        public void LoadPageMyAccount()
+        public void LoadAdvertView(/*AdvertsModel advert*/)
         {
-            ActivateItemAsync(MyAccountViewModel);
-        }
-        public void RowView(AdvertsModel advert)
-        {
-            AdvertViewModel = new AdvertViewModel(advert);
+            AdvertViewModel = new AdvertViewModel(/*advert*/);
             ActivateItemAsync(AdvertViewModel);
         }
-
-
-
-
     }
 }

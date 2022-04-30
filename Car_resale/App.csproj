@@ -7,6 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Pictures\stug.png" />
+    <None Remove="Resources\Pictures\susman.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Pictures\stug.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Pictures\susman.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Collection.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Caliburn.Micro" Version="4.0.173" />
   </ItemGroup>

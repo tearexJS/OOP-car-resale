@@ -8,120 +8,62 @@
         xmlns:cal="http://www.caliburnproject.org"
         Title="MainWindow" Height="600" Width="920"
         WindowStyle="SingleBorderWindow"
-        
         MinHeight="500"
         MinWidth="650"
         Background="#272533" 
         WindowStartupLocation="CenterScreen">
-
-
     <Border Background="#272533"
             CornerRadius="20"
             >
-
-
-
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <!--Top menu-->
+            <Menu DockPanel.Dock="Top" Grid.ColumnSpan="2">
+                
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open" />
+                    <MenuItem Header="_Save" />
+                </MenuItem>
+            </Menu>
 
-
-
-            <Button x:Name="LoadPageMyAccount">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="#272533"/>
-                        <Setter Property="BorderBrush" Value="#20202f"/>
-                        <Setter Property="BorderThickness" Value="4"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#20202f"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Content>
-                    <StackPanel Orientation="Horizontal" Width="190">
-                        <Image Width="80"
-                       Height="80"
-                       Source="/Resources/Images/FeraFace.png" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"
-                       RenderOptions.BitmapScalingMode="Fant"
-                       />
-                        <TextBlock Text="Karel"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
-                           Foreground="White"
-                           FontSize="22"
-                           Margin="20,0,0,0"
-                           />
-                    </StackPanel>
-                </Button.Content>
-
-            </Button>
-
-
-
-            <StackPanel Grid.Row="1">
-
-                <RadioButton x:Name="LoadPage1"
-                             Content="Home"
+            <!--Buttons-->
+            <StackPanel Grid.Row="1" Grid.RowSpan="2">
+                <RadioButton x:Name="LoadBrowseView"
+                             Content="Browse"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              IsChecked="True"
                              />
-                <RadioButton x:Name="LoadPage2"
-                             Content="Browse"
+                <RadioButton x:Name="LoadAdvertView"
+                             Content="Advertisement view"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              />
-                <RadioButton x:Name="LoadPage3"
+                <RadioButton x:Name="LoadNewAdvertView"
                              Content="New advertisement"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              />
-
-
-
-
             </StackPanel>
-            <!--
-            <TextBox Width="250"
-                       Height="40"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Margin="5"
-                       Grid.Column="1"
-                       Style="{StaticResource ModernTextBox}"/>
--->
-            <ContentControl Grid.Row="0"
+            <!--Views-->
+            <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Grid.RowSpan="2"
                             Margin="10"
                             x:Name="ActiveItem"/>
-
         </Grid>
-
     </Border>
 </Window>
