@@ -32,8 +32,7 @@
         <Setter Property="BorderBrush" Value="#FF688CAF"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="GridLinesVisibility" Value="Horizontal"/>
-        <Setter Property="HorizontalGridLinesBrush" Value="Red"/>
-        <!--Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DataGrid.Grid.HorizontalLineBrush}"/-->
+        <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DataGrid.Grid.HorizontalLineBrush}"/>
         <Setter Property="HeadersVisibility" Value="Column"/>
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
         <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
