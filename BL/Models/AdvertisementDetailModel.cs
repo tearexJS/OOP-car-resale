@@ -21,7 +21,7 @@ namespace CarResale.BL.Models
         public DateTime PublicationTime { get; set; } = PublicationTime;
         public CarDetailModel Car { get; set; }
         public UserListModel User { get; set; }
-        public List<ImageDetailModel> Images { get; set; }
+        public List<ImageDetailModel> Images { get; set; } = new();
 
         public class MapperProfile : Profile
         {

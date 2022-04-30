@@ -21,7 +21,7 @@ namespace CarResale.BL.Models
         public string PhoneNumber { get; set; } = PhoneNumber;
         public string Email { get; set; } = Email;
         public string Password { get; set; } = Password;
-        public List<AdvertisementListModel> Advertisements { get; set; }
+        public List<AdvertisementDetailModel> Advertisements { get; set; } = new();
 
         public class MapperProfile : Profile
         {

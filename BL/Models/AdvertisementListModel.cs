@@ -25,6 +25,7 @@ namespace CarResale.BL.Models
             {
 
                 CreateMap<AdvertisementEntity, AdvertisementListModel>();
+                CreateMap<AdvertisementDetailModel, AdvertisementListModel>();
             }
         }
     }
