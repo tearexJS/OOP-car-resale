@@ -71,6 +71,7 @@ namespace App.ViewModels
             //advertPicture = createImage("\\Resources\\Images\\" + Path.GetFileName(files[0]));
 
             e.Handled = true;
+
             return;
         }
 

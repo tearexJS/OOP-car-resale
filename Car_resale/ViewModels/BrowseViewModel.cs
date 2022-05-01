@@ -8,5 +8,6 @@ namespace App.ViewModels
 {
     public class BrowseViewModel
     {
+        
     }
 }

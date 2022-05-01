@@ -54,15 +54,15 @@
                 <TextBlock Text="Model:" Foreground="White" HorizontalAlignment="Right" Grid.Row="1" Margin="10,1"/>
                 <TextBlock Text="Manufacture year:" Foreground="White" HorizontalAlignment="Right" Grid.Row="2" Margin="10,1"/>
                 <TextBlock Text="Mileage:" Foreground="White" HorizontalAlignment="Right" Grid.Row="3" Margin="10,1"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,2,5,1" x:Name="CarManufacturerComboBox"
-                         Background="#272533" Foreground="White" BorderThickness="0"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="0,1,5,1" x:Name="CarModelComboBox" 
-                         Background="#272533" Foreground="White" BorderThickness="0"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="0,1,5,1" x:Name="YearOfManufactureTextBox" 
-                         Background="#272533" Foreground="White" BorderThickness="0"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Margin="0,1,5,4" x:Name="MileageTextBox" 
-                         Background="#272533" Foreground="White" BorderThickness="0">
-                </TextBox>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,2,5,1" x:Name="CarManufacturerComboBox"
+                         Background="#272533" Foreground="White"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,1,5,1" x:Name="CarModelComboBox" 
+                         Background="#272533" Foreground="White"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="0,1,5,1" x:Name="YearOfManufactureTextBox" 
+                         Background="#272533" Foreground="White"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,1,5,4" x:Name="MileageTextBox" 
+                         Background="#272533" Foreground="White"/>
+
             </Grid>
             
             <!--Export button-->
