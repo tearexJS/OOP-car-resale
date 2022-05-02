@@ -35,13 +35,13 @@ namespace App.ViewModels
         public ObservableCollection<CarListModel> Adverts { get; } = new();
         public ICommand SelectedCar { get; }
         public ICommand Search { get; }
-        public string SearchedString
+        public string SearchedCarModel
         {
             get => _searchedString;
             set
             {
                 _searchedString = value;
-                OnPropertyChanged(nameof(SearchedString));
+                OnPropertyChanged(nameof(SearchedCarModel));
             }
         }
         public CarListModel SelectedRow 
@@ -77,9 +77,14 @@ namespace App.ViewModels
 
         private void OnSearch()
         {
-            var filtered = Adverts.Where(car => car.ModelName.StartsWith(_searchedString));
+            List<CarListModel> cars = new List<CarListModel>();
+            foreach (var car in Adverts)
+            {
+                if (car.ModelName == _searchedString)
+                    cars.Add(car);
+            }
             Adverts.Clear();
-            Adverts.AddRange(filtered);
+            Adverts.AddRange(cars);
         }
     }
 }

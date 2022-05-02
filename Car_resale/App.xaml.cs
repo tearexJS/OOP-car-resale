@@ -59,7 +59,7 @@ namespace Car_resale
 
         private void ConfigureAppConfiguration(HostBuilderContext context, IConfigurationBuilder builder)
         {
-            builder.AddJsonFile(@"C:\Users\pivop\Documents\GitHub\OOP-car-resale2\Car_resale\AppSettings.json", false, false);
+            builder.AddJsonFile(@"C:\OOP-car-resale\Car_resale\AppSettings.json", false, false);
         }
 
         protected override async void OnStartup(StartupEventArgs e)
