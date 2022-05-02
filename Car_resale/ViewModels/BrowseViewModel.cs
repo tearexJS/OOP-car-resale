@@ -71,6 +71,7 @@ namespace App.ViewModels
         }
         private void SelectedCarInDatagrid(CarListModel? carListModel)
         {
+            if (_selectedRow != null)
             _mediator.Send(new SelectMessage<CarWrapper> { Id = _selectedRow.Id });
         }
 
