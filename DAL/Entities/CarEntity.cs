@@ -11,6 +11,7 @@ namespace CarResale.DAL.Entities
             Guid Id,
             decimal Mileage,
             int YearOfManufacture,
+            string ImagePath,
             Guid CarModelId
         ) : IEntity
     {

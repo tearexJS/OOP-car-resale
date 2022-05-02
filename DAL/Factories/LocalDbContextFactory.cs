@@ -20,7 +20,7 @@ namespace CarResale.DAL.Factories
         public CarResaleDbContext CreateDbContext()
         {
             var optionsBuilder = new DbContextOptionsBuilder<CarResaleDbContext>();
-            optionsBuilder.UseSqlServer(_connectionString);
+            optionsBuilder.UseSqlite(_connectionString);
             return new CarResaleDbContext(optionsBuilder.Options, _seedDemoData);
         }
     }

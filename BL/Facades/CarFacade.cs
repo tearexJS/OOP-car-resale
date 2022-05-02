@@ -11,8 +11,8 @@ using CarResale.DAL.UnitOfWork;
 
 namespace CarResale.BL.Facades
 {
-    public class CarFacade : CRUDFacade<CarEntity, CarDetailModel, CarDetailModel>
+    public class CarFacade : CRUDFacade<CarEntity, CarListModel, CarDetailModel>
     {
-        public CarFacade(IUnitOfWorkFactory unitOfWorkFactory, Mapper mapper) : base(unitOfWorkFactory, mapper) { }
+        public CarFacade(IUnitOfWorkFactory unitOfWorkFactory, IMapper mapper) : base(unitOfWorkFactory, mapper) { }
     }
 }
