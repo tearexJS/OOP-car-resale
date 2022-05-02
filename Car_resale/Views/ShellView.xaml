@@ -26,7 +26,7 @@
             </Grid.RowDefinitions>
             <!--Top menu-->
             <Menu DockPanel.Dock="Top" Grid.ColumnSpan="2">
-                
+
                 <MenuItem Header="_File">
                     <MenuItem Header="_Open" />
                     <MenuItem Header="_Save" />
@@ -35,28 +35,27 @@
 
             <!--Buttons-->
             <StackPanel Grid.Row="1" Grid.RowSpan="2">
-                <RadioButton x:Name="LoadBrowseView"
-                             Content="Browse"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             IsChecked="True"
-                             />
-                <RadioButton x:Name="LoadAdvertView"
-                             Content="Advertisement view"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             />
-                <RadioButton x:Name="LoadNewAdvertView"
-                             Content="New advertisement"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             />
+                <Button x:Name="LoadBrowseView"
+                        Style="{DynamicResource ButtonStyle1}"
+                        Content="Browse"
+                        Height="50"
+                        Foreground="White"
+                        FontSize="14"
+                        />
+                <Button x:Name="LoadAdvertView"
+                        Style="{DynamicResource ButtonStyle1}"
+                        Content="Advertisement view"
+                        Height="50"
+                        Foreground="White"
+                        FontSize="14"
+                        />
+                <Button Style="{DynamicResource ButtonStyle1}" 
+                        x:Name="LoadNewAdvertView"
+                        Content="New advertisement"
+                        Height="50"
+                        Foreground="White"
+                        FontSize="14"
+                        />
             </StackPanel>
             <!--Views-->
             <ContentControl Grid.Row="1"
