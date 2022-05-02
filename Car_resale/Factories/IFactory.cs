@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Messages
+namespace App.Factories
 {
-    public interface IMessage
+    public interface IFactory<out T>
     {
+        T Create();
     }
 }

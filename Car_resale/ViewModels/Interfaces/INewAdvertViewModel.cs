@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace App.Messages
+using App.Wrappers;
+namespace App.ViewModels.Interfaces
 {
-    public interface IMessage
+    public interface INewAdvertViewModel : IDetailViewModel<CarWrapper>
     {
+
     }
 }

@@ -18,7 +18,7 @@ namespace App.Views
     /// <summary>
     /// Interaction logic for AdvertView.xaml
     /// </summary>
-    public partial class AdvertView : UserControl
+    public partial class AdvertView : UserControlBase
     {
         public AdvertView()
         {

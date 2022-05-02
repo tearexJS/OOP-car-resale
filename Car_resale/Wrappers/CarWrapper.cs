@@ -23,6 +23,11 @@ namespace App.Wrappers
             get => GetValue<int>();
             set => SetValue(value);
         }
+        public string ImagePath
+        {
+            get => GetValue<string>();
+            set => SetValue(value);
+        }
         public CarModelListModel CarModel
         {
             get => GetValue<CarModelListModel>();
@@ -38,6 +43,10 @@ namespace App.Wrappers
             if(YearOfManufacture > 0)
             {
                 yield return new ValidationResult($"{nameof(YearOfManufacture)} is required", new[] { nameof(YearOfManufacture) });
+            }
+            if (string.IsNullOrWhiteSpace(ImagePath))
+            {
+                yield return new ValidationResult($"{nameof(ImagePath)}, is required for the car", new[] { nameof(ImagePath) });
             }
         }
         public static implicit operator CarWrapper(CarDetailModel detailModel)

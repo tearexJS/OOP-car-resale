@@ -100,34 +100,7 @@ namespace CarResale.BL.Tests
             var carModeListFromDb = _carModelFacadeSUT.GetAsync(carModel.Id);
             DeepAssert.Equals(carListModelExpected, carModeListFromDb);
         }
-       [Fact]
-       public async Task MapCarModelDetialModelToCarModeListMode()
-       {
-           var
-           CarModelDetail = new CarModelDetailModel(
-                ModelName:"asdf",
-                Power:1,
-                Engine:1,
-                Seats:1,
-                TrunkSize:1
-               )
-           {
-               Type = new CarTypeDetailModel("asdf"),
-               Manufacturer = new CarManufacturerDetailModel("asdf")
-           };
 
-           var carModelList = new CarModelListModel(
-               ModelName:"asdf",
-               Engine:1,
-               Power:1,
-               Seats:1,
-               TrunkSize:1,
-               ManufacturerName:"asdf",
-               Type:"asdf"
-               );
-
-           DeepAssert.Equals(carModelList, Mapper.Map<CarModelListModel>(CarModelDetail));
-       }
         /* private static void FixIds(CarModelDetailModel expectedModel, CarModelDetailModel returnedModel)
          {
              returnedModel.Id = expectedModel.Id;

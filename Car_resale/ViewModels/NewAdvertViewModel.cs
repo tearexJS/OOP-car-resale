@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro;
+﻿using App.ViewModels.Interfaces;
+using App.Wrappers;
+using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,111 +10,92 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using CarResale.BL.Facades;
+using App.Services;
+using CarResale.BL.Models;
+using System.Collections.ObjectModel;
+using App.Extensions;
+using System.Windows.Input;
+using App.Commands;
+using App.Messages;
 
 namespace App.ViewModels
 {
-    public class NewAdvertViewModel : Screen
+    public class NewAdvertViewModel : ViewModelBase, INewAdvertViewModel
     {
-        public NewAdvertViewModel()
+        private readonly CarFacade _carFacade;
+        private readonly CarModelFacade _carModelFacade;
+        private readonly IMediator _mediator;
+        private string _filePath;
+        public NewAdvertViewModel(
+            CarFacade carFacade,
+            CarModelFacade carModelFacade,
+            IMediator mediator
+            )
         {
-            projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-            //advertPicture = createImage(projectDirectory + "\\Resources\\Images\\Cars\\defaultCar.png");
+            _carFacade = carFacade;
+            _carModelFacade = carModelFacade;
+            _mediator = mediator;
+            AddNewCar = new AsyncRelayCommand(SaveAsync);
+            ImportCarFromCSV = new RelayCommand(OnImportSave);
+
         }
 
-        string projectDirectory;
-        private Image _advertPicture;
+        public CarWrapper Model { get; private set; }
+        public ObservableCollection<CarModelListModel> CarModels { get; set; } = new();
 
-        public Image advertPicture
+
+        public ICommand AddNewCar { get; }
+        public ICommand ImportCarFromCSV { get; }
+        public string FilePath 
         {
-            get => _advertPicture;
+            get => _filePath;
             set
             {
-                _advertPicture = value;
-                NotifyOfPropertyChange(() => advertPicture);
-            }
+                _filePath = value;
+                OnPropertyChanged(nameof(FilePath));
+            } 
         }
-
-        public void FilePreviewDragEnter(DragEventArgs e)
+        public Task DeleteAsync()
         {
-
-            bool dropEnabled = true;
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
-            {
-                string[] filenames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
-
-                foreach (string filename in filenames)
-                {
-                    if (Path.GetExtension(filename).ToUpperInvariant() != ".PNG" && Path.GetExtension(filename).ToUpperInvariant() != ".JPG")
-                    {
-                        dropEnabled = false;
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                dropEnabled = false;
-            }
-
-            if (!dropEnabled)
-            {
-                e.Effects = DragDropEffects.None;
-                e.Handled = true;
-            }
+            throw new NotImplementedException();
         }
 
-        public void FileDropped(DragEventArgs e)
+        public async Task SaveAsync()
         {
-            string[] files = e.Data.GetData(DataFormats.FileDrop, true) as string[];
-            string fileSource = Path.GetFullPath(files[0]);
-            string fileDesination = projectDirectory + "\\Resources\\Pictures\\" + Path.GetFileName(files[0]);
+            if(Model == null)
+            {
+                throw new InvalidOperationException("Null model cannot be saved");
+            }
+            Model = await _carFacade.SaveAsync(Model.Model);
+            _mediator.Send(new AddMessage<CarWrapper> { Id = Model.Id});
 
-            File.Copy(fileSource, fileDesination, true);
-            //advertPicture = createImage("\\Resources\\Images\\" + Path.GetFileName(files[0]));
-
-            e.Handled = true;
-            return;
         }
 
-        public void DragOverFileExtensionCheck(DragEventArgs e)
+        public async Task LoadAsync(Guid id)
         {
-
-            bool dropEnabled = true;
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
-            {
-                string[] filenames =
-                                 e.Data.GetData(DataFormats.FileDrop, true) as string[];
-
-                foreach (string filename in filenames)
-                {
-                    if (System.IO.Path.GetExtension(filename).ToUpperInvariant() != ".PNG" && System.IO.Path.GetExtension(filename).ToUpperInvariant() != ".JPG")
-                    {
-                        dropEnabled = false;
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                dropEnabled = false;
-            }
-
-            if (!dropEnabled)
-            {
-                e.Effects = DragDropEffects.None;
-                e.Handled = true;
-            }
+            Model = await _carFacade.GetAsync(id) ?? CarDetailModel.Empty;
+            CarModels.Clear();
+            var carModels = await _carModelFacade.GetAsync();
+            CarModels.AddRange(carModels);
         }
-
-        //private Image createImage(string ImagePath)
-        //{
-        //    Image newImage = new();
-        //    BitmapImage src = new BitmapImage();
-        //    src.BeginInit();
-        //    src.UriSource = new Uri(ImagePath, UriKind.Absolute);
-        //    src.EndInit();
-        //    newImage.Source = src;
-        //    return newImage;
-        //}
+        private void OnImportSave()
+        {
+           string data;
+           using(StreamReader reader = new StreamReader(_filePath))
+           {
+                data = reader.ReadToEnd();
+           }
+           var dataArr = data.Split(';');
+           foreach(var carModel in CarModels)
+            {
+                if(carModel.ModelName == dataArr[0])
+                    Model.Model.CarModel = carModel;
+            }
+            Model.ImagePath = dataArr[4];
+            Model.YearOfManufacture = Convert.ToInt32(dataArr[2]);
+            Model.Mileage = Convert.ToDecimal(dataArr[3]);
+            _ = SaveAsync();
+        }
     }
 }

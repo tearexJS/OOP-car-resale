@@ -18,11 +18,12 @@ namespace App.Views
     /// <summary>
     /// Interaction logic for NewAdvertView.xaml
     /// </summary>
-    public partial class NewAdvertView : UserControl
+    public partial class NewAdvertView : UserControlBase
     {
         public NewAdvertView()
         {
             InitializeComponent();
         }
+
     }
 }

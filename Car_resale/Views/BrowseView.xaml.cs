@@ -18,7 +18,7 @@ namespace App.Views
     /// <summary>
     /// Interaction logic for BrowseView.xaml
     /// </summary>
-    public partial class BrowseView : UserControl
+    public partial class BrowseView : UserControlBase
     {
         public BrowseView()
         {

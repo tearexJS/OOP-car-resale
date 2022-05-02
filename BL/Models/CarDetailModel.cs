@@ -10,11 +10,13 @@ namespace CarResale.BL.Models
 {
     public record CarDetailModel(
         decimal Mileage,
-        int YearOfManufacture
+        int YearOfManufacture,
+        string ImagePath
         ) : ModelBase
     {
         public decimal Mileage { get; set; } = Mileage;
         public int YearOfManufacture { get; set; } = YearOfManufacture;
+        public string ImagePath { get; set; } = ImagePath;
         public CarModelListModel CarModel { get; set; }
 
         public class MapperProfile : Profile
@@ -27,6 +29,7 @@ namespace CarResale.BL.Models
                     .ForMember(entity => entity.CarModel, opt => opt.Ignore());
             }
         }
+        public static CarDetailModel Empty => new(default, default, string.Empty);
 
     }
 

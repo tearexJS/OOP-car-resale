@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CarResale.DAL.Entities;
-using CarResale.DAL.Seeds;
 using Microsoft.EntityFrameworkCore;
+using DAL.Seeds;
 
 namespace CarResale.DAL
 {
@@ -18,13 +18,10 @@ namespace CarResale.DAL
             _seedDemoData = seedDemoData;
         }
 
-        public DbSet<AdvertisementEntity> Advertisements => Set<AdvertisementEntity>();
         public DbSet<CarEntity> Cars => Set<CarEntity>();
         public DbSet<CarManufacturerEntity> CarManufacturers => Set<CarManufacturerEntity>();
         public DbSet<CarModelEntity> CarModels => Set<CarModelEntity>();
         public DbSet<CarTypeEntity> CarTypes => Set<CarTypeEntity>();
-        public DbSet<ImageEntity> Images => Set<ImageEntity>();
-        public DbSet<UserEntity> Users => Set<UserEntity>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,7 +37,10 @@ namespace CarResale.DAL
 
             if(_seedDemoData)
             {
-                UserSeeds.Seed(modelBuilder);
+                CarManufacturerSeeds.Seed(modelBuilder);
+                CarTypeSeeds.Seed(modelBuilder);
+                CarModelSeeds.Seed(modelBuilder);
+                CarSeeds.Seed(modelBuilder);
             }
         }
     }

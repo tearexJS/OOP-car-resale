@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Messages
+namespace App.ViewModels.Interfaces
 {
-    public interface IMessage
+    public interface IListViewModel
     {
+            Task LoadAsync();   
     }
 }
