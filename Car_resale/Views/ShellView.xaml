@@ -9,7 +9,7 @@
         Title="MainWindow" Height="600" Width="920"
         WindowStyle="SingleBorderWindow"
         MinHeight="500"
-        MinWidth="650"
+        MinWidth="700"
         Background="#272533" 
         WindowStartupLocation="CenterScreen"
         d:DataContext="{d:DesignInstance viewModels:ShellViewModel}">
@@ -30,8 +30,10 @@
 
             <!--Buttons-->
             <StackPanel Grid.Row="1" Grid.RowSpan="2">
-                <Button Content="Browse view" Command="{Binding ShowBrowseView}"/>
-                <Button Content="New advert view" Command="{Binding ShowNewAdvertView}"/>
+                <Button Content="Browse view" Command="{Binding ShowBrowseView}"
+                        Style="{DynamicResource MenuButtonStyle}" Foreground="White" Height="50" FontSize="14"/>
+                <Button Content="New advert view" Command="{Binding ShowNewAdvertView}"
+                        Style="{DynamicResource MenuButtonStyle}" Foreground="White" Height="50" FontSize="14"/>
             </StackPanel>
             <!--Views-->
             <ContentControl Grid.Row="1"

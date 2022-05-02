@@ -28,27 +28,50 @@
                         VerticalAlignment="Center"   
                         Margin="0,0,0,20"
                         />
-            <Button 
-                Content="Show"
-                Margin="100,20,0,20"
-                Command="{Binding SelectedCar}"/>
         </StackPanel>
+        <Button 
+                Style="{DynamicResource MenuButtonStyle}" Background="#353340" Content="Show" Foreground="White" Width="90" Height="40" HorizontalAlignment="Left"
+                Command="{Binding SelectedCar}" Grid.ColumnSpan="2" Margin="95,0,0,0"
+            Visibility="Hidden">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
         <!--Serach bar-->
         <!--TextChanged="searchHandler"-->
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="260">
+        <DockPanel  Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Right">
+            <Button 
+                Style="{DynamicResource MenuButtonStyle}" Background="#353340" Content="Show" Foreground="White" Width="60" Height="40" HorizontalAlignment="Left"
+                Command="{Binding SelectedCar}" Grid.ColumnSpan="2" Margin="5">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
             <TextBox   x:Name="SearchTextbox"
                        Text="{Binding SearchedString}"
-                       Width="250"
+                       HorizontalAlignment="Stretch"
                        Height="40"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Right"
                        Margin="5"
                        Grid.Column="1"
                        Style="{StaticResource ModernTextBox}"
                        >
             </TextBox>
-        </StackPanel>
+            <Button Style="{DynamicResource MenuButtonStyle}" 
+                    Command="{Binding Search}"
+                    Background="#353340" Content="Search" Foreground="White" 
+                    Width="40" Height="40" Margin="5,0,0,0" HorizontalAlignment="Right">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </DockPanel>
 
         <!--DataGrid-->
         <DataGrid x:Name="Adverts" 
@@ -59,13 +82,18 @@
                       CanUserAddRows="False" CanUserDeleteRows="False" 
                       IsReadOnly="True"
                       CanUserReorderColumns="False"
-                      RowHeight="90">
+                      >
+                  
+
+            <DataGrid.InputBindings>
+                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding SelectedCar}"/>
+            </DataGrid.InputBindings>
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
-                    <Setter Property="cal:Message.Attach" Value="[MouseDoubleClick] = [Action RowView($dataContext)]"/>
+                    <Setter Property="Height" Value="90"/>
                 </Style>
             </DataGrid.RowStyle>
-            <DataGrid.Columns >
+            <DataGrid.Columns>
                 <!--Image column-->
                 <DataGridTemplateColumn Header="Obrazok" Width="10*" MinWidth="125">
                     <DataGridTemplateColumn.CellTemplate>
